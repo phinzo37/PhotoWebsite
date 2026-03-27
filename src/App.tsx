@@ -430,7 +430,7 @@ function UrgencyBanner() {
   return (
     <div className="fixed top-0 left-0 right-0 bg-brand-accent text-brand-bg py-2 px-4 text-center z-50 h-8 flex items-center justify-center">
       <p className="font-accent tracking-widest uppercase text-xs font-semibold">
-        Limited dates available for 2025 bookings
+        Limited dates available for 2026 bookings
       </p>
     </div>
   );
