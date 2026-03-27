@@ -264,13 +264,67 @@ function Stats() {
 }
 
 // --- Portfolio / Gallery ---
+
+/*
+  HOW TO ADD YOUR PHOTOS:
+  1. Go to https://cloudinary.com and create a free account
+  2. Click "Upload" and drag your photos in
+  3. Click on any uploaded photo → copy the URL shown
+  4. Paste that URL into the imageUrl field below
+  5. Save, push to GitHub, then run on server:
+     cd /var/www/html && git pull origin main && npm run build
+  
+  Example Cloudinary URL format:
+  https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v123/photo.jpg
+  
+  Tips for best results:
+  - Use landscape or portrait photos (portrait fits the 4:5 card best)  
+  - Cloudinary auto-optimizes — no need to resize before uploading
+  - Leave imageUrl as "" to keep the gradient placeholder
+*/
 const portfolioProjects = [
-  { id: 1, title: "Midnight in Paris", category: "Editorial", bg: "bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#0a0a0a]" },
-  { id: 2, title: "The Vow", category: "Wedding", bg: "bg-gradient-to-tr from-[#2c2a25] via-[#1a1a1a] to-[#0a0a0a]" },
-  { id: 3, title: "Raw Emotion", category: "Portrait", bg: "bg-gradient-to-bl from-[#1f1f1f] via-[#252525] to-[#0a0a0a]" },
-  { id: 4, title: "Desert Mirage", category: "Editorial", bg: "bg-gradient-to-br from-[#2a241a] via-[#1a1a1a] to-[#0a0a0a]" },
-  { id: 5, title: "Eternity", category: "Wedding", bg: "bg-gradient-to-t from-[#1a1a1a] via-[#222222] to-[#111111]" },
-  { id: 6, title: "Shadow & Light", category: "Portrait", bg: "bg-gradient-to-b from-[#2a2a2a] via-[#1a1a1a] to-[#050505]" },
+  { 
+    id: 1, 
+    title: "Midnight in Paris", 
+    category: "Editorial", 
+    bg: "bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#0a0a0a]",
+    imageUrl: "" 
+  },
+  { 
+    id: 2, 
+    title: "The Vow", 
+    category: "Wedding", 
+    bg: "bg-gradient-to-tr from-[#2c2a25] via-[#1a1a1a] to-[#0a0a0a]",
+    imageUrl: "" 
+  },
+  { 
+    id: 3, 
+    title: "Raw Emotion", 
+    category: "Portrait", 
+    bg: "bg-gradient-to-bl from-[#1f1f1f] via-[#252525] to-[#0a0a0a]",
+    imageUrl: "" 
+  },
+  { 
+    id: 4, 
+    title: "Desert Mirage", 
+    category: "Editorial", 
+    bg: "bg-gradient-to-br from-[#2a241a] via-[#1a1a1a] to-[#0a0a0a]",
+    imageUrl: "" 
+  },
+  { 
+    id: 5, 
+    title: "Eternity", 
+    category: "Wedding", 
+    bg: "bg-gradient-to-t from-[#1a1a1a] via-[#222222] to-[#111111]",
+    imageUrl: "" 
+  },
+  { 
+    id: 6, 
+    title: "Shadow & Light", 
+    category: "Portrait", 
+    bg: "bg-gradient-to-b from-[#2a2a2a] via-[#1a1a1a] to-[#050505]",
+    imageUrl: "" 
+  },
 ];
 
 const categories = ["All", "Editorial", "Wedding", "Portrait"];
@@ -323,9 +377,17 @@ function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className={`group relative overflow-hidden aspect-[4/5] cursor-pointer ${project.bg}`}
+                className={`group relative overflow-hidden aspect-[4/5] cursor-pointer ${!project.imageUrl ? project.bg : 'bg-brand-bg'}`}
               >
-                <div className="absolute inset-0 bg-noise opacity-50 mix-blend-overlay"></div>
+                {project.imageUrl ? (
+                  <img 
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-noise opacity-50 mix-blend-overlay"></div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/90 via-brand-bg/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                   <span className="font-accent text-brand-accent tracking-widest uppercase text-xs mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     {project.category}
@@ -363,24 +425,44 @@ function UrgencyBanner() {
 }
 
 // --- Services ---
+/*
+  HOW TO ADD YOUR PHOTOS:
+  1. Go to https://cloudinary.com and create a free account
+  2. Click "Upload" and drag your photos in
+  3. Click on any uploaded photo → copy the URL shown
+  4. Paste that URL into the imageUrl field below
+  5. Save, push to GitHub, then run on server:
+     cd /var/www/html && git pull origin main && npm run build
+  
+  Example Cloudinary URL format:
+  https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/v123/photo.jpg
+  
+  Tips for best results:
+  - Use landscape or portrait photos (portrait fits the 4:5 card best)  
+  - Cloudinary auto-optimizes — no need to resize before uploading
+  - Leave imageUrl as "" to keep the gradient placeholder
+*/
 const services = [
   {
     title: "Editorial & Fashion",
     price: "Starting at $2,500",
     desc: "High-end conceptual photography for brands, magazines, and designers. Includes creative direction, styling consultation, and full retouching.",
-    bg: "bg-gradient-to-br from-[#2a2a2a] to-[#0a0a0a]"
+    bg: "bg-gradient-to-br from-[#2a2a2a] to-[#0a0a0a]",
+    imageUrl: ""
   },
   {
     title: "Luxury Weddings",
     price: "Starting at $8,000",
     desc: "Cinematic documentation of your most important day. We capture the raw emotion, the grand details, and the fleeting moments in between.",
-    bg: "bg-gradient-to-tr from-[#2c2a25] to-[#0a0a0a]"
+    bg: "bg-gradient-to-tr from-[#2c2a25] to-[#0a0a0a]",
+    imageUrl: ""
   },
   {
     title: "Fine Art Portraiture",
     price: "Starting at $1,200",
     desc: "Intimate, evocative portraits that capture the essence of the subject. Shot in studio or on location with masterful lighting.",
-    bg: "bg-gradient-to-bl from-[#1f1f1f] to-[#0a0a0a]"
+    bg: "bg-gradient-to-bl from-[#1f1f1f] to-[#0a0a0a]",
+    imageUrl: ""
   }
 ];
 
@@ -401,9 +483,19 @@ function Services() {
             <SectionReveal key={service.title}>
               <div className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}>
                 <div className="w-full lg:w-1/2">
-                  <div className={`relative aspect-[4/3] overflow-hidden ${service.bg}`}>
-                    <div className="absolute inset-0 bg-noise opacity-50 mix-blend-overlay"></div>
-                    <div className="absolute inset-0 border border-brand-accent/20 m-4 pointer-events-none"></div>
+                  <div className={`relative aspect-[4/3] overflow-hidden ${!service.imageUrl ? service.bg : 'bg-brand-bg'}`}>
+                    {service.imageUrl ? (
+                      <img
+                        src={service.imageUrl}
+                        alt={service.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-noise opacity-50 mix-blend-overlay"></div>
+                        <div className="absolute inset-0 border border-brand-accent/20 m-4 pointer-events-none"></div>
+                      </>
+                    )}
                   </div>
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center">
