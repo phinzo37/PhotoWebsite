@@ -914,17 +914,22 @@
                 mobileMenuBtn.addEventListener('click', () => {
                     navLinks.classList.toggle('active');
                     if (navLinks.classList.contains('active')) {
+                        navbar.style.background = 'var(--bg-primary)';
                         navLinks.style.display = 'flex';
                         navLinks.style.flexDirection = 'column';
+                        navLinks.style.alignItems = 'center';
+                        navLinks.style.gap = '1.5rem';
                         navLinks.style.position = 'absolute';
                         navLinks.style.top = '100%';
                         navLinks.style.left = '0';
                         navLinks.style.width = '100%';
-                        navLinks.style.background = 'var(--bg-dark)';
+                        navLinks.style.background = 'var(--bg-primary)';
                         navLinks.style.padding = '2rem';
                         navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
                     } else {
+                        navbar.style.background = '';
                         navLinks.style.display = 'none';
+                        navLinks.style.gap = '';
                     }
                 });
 
@@ -933,7 +938,9 @@
                     link.addEventListener('click', () => {
                         if (window.innerWidth < 768) {
                             navLinks.classList.remove('active');
+                            navbar.style.background = '';
                             navLinks.style.display = 'none';
+                            navLinks.style.gap = '';
                         }
                     });
                 });
