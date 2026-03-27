@@ -162,7 +162,7 @@ function Hero() {
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <span className="block font-accent text-brand-accent tracking-[0.3em] uppercase text-sm md:text-base mb-6">
-            Luxury Editorial Photography
+            Phinzo Photography presents
           </span>
         </motion.div>
 
