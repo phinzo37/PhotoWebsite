@@ -60,8 +60,12 @@ function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-display text-2xl md:text-3xl tracking-widest uppercase text-brand-text relative z-50">
-            Phinzo
+          <a href="#" className="relative z-50 flex items-center">
+            <img
+              src="https://res.cloudinary.com/dirogcdqm/image/upload/v1774634759/phinzo_logo_transparent_eb2fkm.png"
+              alt="Phinzo Photography"
+              className="h-16 md:h-20 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -108,6 +112,14 @@ function Navigation() {
             className="fixed inset-0 bg-brand-bg z-40 flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center space-y-8">
+              <motion.img
+                src="https://res.cloudinary.com/dirogcdqm/image/upload/v1774634759/phinzo_logo_transparent_eb2fkm.png"
+                alt="Phinzo Photography"
+                className="h-20 w-auto object-contain mb-8"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              />
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.name}
@@ -670,9 +682,11 @@ function Footer() {
   return (
     <footer className="bg-brand-bg py-12 px-6 border-t border-brand-accent/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="font-display text-2xl tracking-widest uppercase text-brand-text">
-          Phinzo
-        </div>
+        <img
+          src="https://res.cloudinary.com/dirogcdqm/image/upload/v1774634759/phinzo_logo_transparent_eb2fkm.png"
+          alt="Phinzo Photography"
+          className="h-14 w-auto object-contain"
+        />
         <div className="flex gap-6">
           <a href="#" className="text-brand-muted hover:text-brand-accent transition-colors"><span className="sr-only">Instagram</span>IG</a>
           <a href="#" className="text-brand-muted hover:text-brand-accent transition-colors"><span className="sr-only">Pinterest</span>PT</a>
