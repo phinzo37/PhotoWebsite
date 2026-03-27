@@ -288,42 +288,42 @@ const portfolioProjects = [
     title: "Midnight in Paris", 
     category: "Editorial", 
     bg: "bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#0a0a0a]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC03741-Enhanced-NR_b2uycc.jpg" 
   },
   { 
     id: 2, 
     title: "The Vow", 
     category: "Wedding", 
     bg: "bg-gradient-to-tr from-[#2c2a25] via-[#1a1a1a] to-[#0a0a0a]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC08910-Enhanced-NR_agxe6o.jpg" 
   },
   { 
     id: 3, 
     title: "Raw Emotion", 
     category: "Portrait", 
     bg: "bg-gradient-to-bl from-[#1f1f1f] via-[#252525] to-[#0a0a0a]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC04537-Enhanced-NR_senpzy.jpg" 
   },
   { 
     id: 4, 
     title: "Desert Mirage", 
     category: "Editorial", 
     bg: "bg-gradient-to-br from-[#2a241a] via-[#1a1a1a] to-[#0a0a0a]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC07006-Enhanced-NR_r3ldqv.jpg" 
   },
   { 
     id: 5, 
     title: "Eternity", 
     category: "Wedding", 
     bg: "bg-gradient-to-t from-[#1a1a1a] via-[#222222] to-[#111111]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC00692-Enhanced-NR_ngtgr8.jpg" 
   },
   { 
     id: 6, 
     title: "Shadow & Light", 
     category: "Portrait", 
     bg: "bg-gradient-to-b from-[#2a2a2a] via-[#1a1a1a] to-[#050505]",
-    imageUrl: "" 
+    imageUrl: "https://res.cloudinary.com/dirogcdqm/image/upload/DSC09320-Enhanced-NR_kuww2y.jpg" 
   },
 ];
 
