@@ -162,7 +162,7 @@ function Hero() {
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <span className="block font-accent text-brand-accent tracking-[0.3em] uppercase text-sm md:text-base mb-6">
-            Phinzo Photography presents
+            Luxury Editorial Photography
           </span>
         </motion.div>
 
@@ -529,6 +529,87 @@ function Services() {
   );
 }
 
+// --- About ---
+function About() {
+  return (
+    <section id="about" className="py-32 px-6 bg-brand-bg border-t border-brand-accent/10">
+      <div className="max-w-7xl mx-auto">
+        <SectionReveal>
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
+            {/* Image placeholder - replace imageUrl with your Cloudinary photo URL */}
+            <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-[#2a2a2a] to-[#0a0a0a] order-2 lg:order-1">
+              <img 
+                src="https://res.cloudinary.com/dirogcdqm/image/upload/v1774635932/IMG_0683_2_qk4r29.jpg" 
+                alt="Phinzo" 
+                className="absolute inset-0 w-full h-full object-cover" 
+              />
+              <div className="absolute inset-0 bg-noise opacity-50 mix-blend-overlay"></div>
+              <div className="absolute inset-0 border border-brand-accent/20 m-6 pointer-events-none"></div>
+            </div>
+
+            {/* Text Content */}
+            <div className="order-1 lg:order-2 flex flex-col justify-center">
+              
+              <span className="font-accent text-brand-accent tracking-widest uppercase text-sm mb-4 block">
+                About
+              </span>
+              
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-brand-text mb-8 leading-tight">
+                Hi, I'm Phinzo.
+              </h2>
+
+              <div className="space-y-6 text-brand-muted text-lg font-light leading-relaxed max-w-lg">
+                <p>
+                  I'm a photographer based in Maryland, capturing weddings, portraits, and events across the DMV area and beyond.
+                </p>
+                <p>
+                  What drives me is simple — real moments. I don't believe in overly posed or staged shots. I believe in being present, staying quiet in the background, and letting the genuine emotion of the moment tell its own story.
+                </p>
+                <p>
+                  Whether it's the nervous laugh before the first dance, a quiet glance between two people, or the joy of a family gathered together — those are the frames worth keeping forever.
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-brand-accent/10">
+                <div>
+                  <p className="font-display text-2xl text-brand-accent mb-1">Maryland</p>
+                  <p className="font-accent tracking-widest uppercase text-xs text-brand-muted">
+                    Based In
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-2xl text-brand-accent mb-1">DMV+</p>
+                  <p className="font-accent tracking-widest uppercase text-xs text-brand-muted">
+                    Available For Travel
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-2xl text-brand-accent mb-1">Natural</p>
+                  <p className="font-accent tracking-widest uppercase text-xs text-brand-muted">
+                    My Style
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <a 
+                  href="#contact" 
+                  className="inline-block px-8 py-4 bg-brand-accent text-brand-bg font-accent tracking-widest uppercase text-sm hover:bg-white transition-colors duration-300"
+                >
+                  Let's Work Together
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+  );
+}
+
 // --- Testimonials ---
 const testimonials = [
   {
@@ -711,6 +792,7 @@ export default function App() {
         <Stats />
         <Portfolio />
         <Services />
+        <About />
         <Testimonials />
         <Contact />
       </main>
